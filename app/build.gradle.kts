@@ -2,6 +2,9 @@
 plugins {
     alias(libs.plugins.com.android.application)
     alias(libs.plugins.org.kotlin)
+    alias(libs.plugins.hilt)
+    id("kotlin-kapt")
+
 }
 
 android {
@@ -32,7 +35,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 }
 
@@ -46,7 +49,11 @@ dependencies {
     implementation(libs.kotlin.coroutines)
     implementation(libs.material)
     implementation(libs.constraintlayout)
-
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.gson)
+    implementation(libs.hilt.android)
+    implementation(libs.hilt.navigation)
+    kapt(libs.hilt.android.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)

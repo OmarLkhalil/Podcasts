@@ -19,6 +19,7 @@
             <option value="$PROJECT_DIR$/ui" />
             <option value="$PROJECT_DIR$/ui/favorite" />
             <option value="$PROJECT_DIR$/ui/home" />
+            <option value="$PROJECT_DIR$/ui/podcast" />
             <option value="$PROJECT_DIR$/ui/search" />
             <option value="$PROJECT_DIR$/ui/settings" />
           </set>

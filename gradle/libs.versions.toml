@@ -9,6 +9,11 @@ appcompat = "1.6.1"
 material = "1.9.0"
 constraintlayout = "2.1.4"
 coroutines = "1.7.3"
+kotlinparcelize = "1.8.0"
+ggson = "2.10.1"
+retrofit = "2.9.0"
+hilt = "2.47"
+hilt-navigation = "1.0.0"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -19,10 +24,19 @@ appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "a
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 kotlin-coroutines ={ group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines"}
+google-gson = { group = "com.google.code.gson", name = "gson", version.ref = "ggson" }
+retrofit = {group = "com.squareup.retrofit2",name = "retrofit",version.ref = "retrofit"}
+retrofit-gson = {group = "com.squareup.retrofit2",name = "converter-gson",version.ref = "retrofit"}
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+hilt-navigation = { group = "androidx.hilt", name = "hilt-navigation", version.ref = "hilt-navigation" }
+
 
 [plugins]
 com-android-application = { id = "com.android.application", version.ref = "agp" }
 com-android-library = { id = "com.android.library", version.ref = "agp" }
 org-kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin-android" }
+kotlinParcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlinparcelize" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 
 [bundles]
