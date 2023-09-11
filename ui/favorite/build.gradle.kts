@@ -6,10 +6,11 @@ plugins {
 
 android {
     namespace = "com.mobilebreakero.music"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        minSdk = 21
         vectorDrawables {
             useSupportLibrary = true
         }

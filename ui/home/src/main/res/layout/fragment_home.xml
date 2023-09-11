@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="#AAA7A7"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".PodcastFragment">
+    tools:context=".screen.HomeFragment">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Podcast Screen"
+        android:text="Home Screen"
         android:textSize="33sp"
         android:textColor="@color/black"
         app:layout_constraintTop_toTopOf="parent"

@@ -9,12 +9,12 @@ plugins {
 
 android {
     namespace = "com.mobilebreakero.podcasts"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.mobilebreakero.podcasts"
         minSdk = 21
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -43,6 +43,7 @@ dependencies {
 
     implementation (project(":core:data"))
     implementation (project(":core:domain"))
+    implementation(project(":common-ui"))
 
     implementation(libs.core.ktx)
     implementation(libs.appcompat)

@@ -6,10 +6,10 @@ plugins {
 
 android {
     namespace = "com.example.podcast"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
-        minSdk = 24
+        minSdk = 21
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")

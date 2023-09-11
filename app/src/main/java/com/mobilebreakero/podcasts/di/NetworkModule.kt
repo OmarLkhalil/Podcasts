@@ -14,6 +14,8 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
+
+    private const val BASE_URL = "https://listen-api.listennotes.com/api/v2"
     @Provides
     @Singleton
     fun provideHttp():OkHttpClient{
@@ -23,7 +25,8 @@ object NetworkModule {
     @Provides
     @Singleton
     fun provideRetrofit(okHttpClient: OkHttpClient):Retrofit{
-        return Retrofit.Builder().baseUrl("https://listen-api.listennotes.com/api/v2")
+        return Retrofit.Builder()
+            .baseUrl(BASE_URL)
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()

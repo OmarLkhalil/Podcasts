@@ -6,9 +6,10 @@ plugins {
 
 android {
     namespace = "com.mobilebreakero.search"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
+        minSdk = 21
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true

@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.mobilebreakero.domain"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

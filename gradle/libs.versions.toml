@@ -14,6 +14,7 @@ ggson = "2.10.1"
 retrofit = "2.9.0"
 hilt = "2.47"
 hilt-navigation = "1.0.0"
+nav_version = "2.7.2"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -30,6 +31,8 @@ retrofit-gson = {group = "com.squareup.retrofit2",name = "converter-gson",versio
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 hilt-navigation = { group = "androidx.hilt", name = "hilt-navigation", version.ref = "hilt-navigation" }
+nav_version = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "nav_version" }
+nav_version2 = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "nav_version" }
 
 
 [plugins]

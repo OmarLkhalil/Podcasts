@@ -6,9 +6,10 @@ plugins {
 
 android {
     namespace = "com.mobilebreakero.common_ui"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
+        minSdk = 21
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
@@ -33,9 +34,20 @@ android {
 
 dependencies {
 
+    implementation(project(":ui:favorite"))
+    implementation(project(":ui:home"))
+    implementation(project(":ui:podcast"))
+    implementation(project(":ui:search"))
+    implementation(project(":ui:settings"))
+
     implementation(libs.core.ktx)
+    implementation(libs.hilt.android)
+    implementation(libs.hilt.navigation)
     implementation(libs.appcompat)
     implementation(libs.material)
+    implementation(libs.nav.version)
+    implementation(libs.nav.version2)
+    implementation(libs.constraintlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)

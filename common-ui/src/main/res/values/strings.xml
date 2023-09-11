@@ -1,0 +1,7 @@
+<resources>
+    <string name="home">home</string>
+    <string name="search">search</string>
+    <string name="favorite">favorite</string>
+    <string name="podcast">podcast</string>
+    <string name="settings">settings</string>
+</resources>
