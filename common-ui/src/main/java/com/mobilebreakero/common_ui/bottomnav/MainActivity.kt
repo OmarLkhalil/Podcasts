@@ -1,51 +1,28 @@
 package com.mobilebreakero.common_ui.bottomnav
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.podcast.PodcastFragment
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationBarView
 import com.mobilebreakero.common_ui.R
-import com.mobilebreakero.home.screen.HomeFragment
-import com.mobilebreakero.music.screen.FavoriteFragment
-import com.mobilebreakero.search.screen.SearchFragment
-import com.mobilebreakero.settings.screen.SettingFragment
+import com.mobilebreakero.common_ui.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
-
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var bottomNav: BottomNavigationView
-    @SuppressLint("CommitTransaction")
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        supportFragmentManager.beginTransaction().replace(R.id.framentContinar, HomeFragment())
-            .commit()
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        bottomNav = findViewById(R.id.buttomNavigathion)
+        val navView: BottomNavigationView = binding.bottomNavigation
 
-        bottomNav.setOnItemSelectedListener(NavigationBarView.OnItemSelectedListener { item ->
-            if (item.itemId == R.id.home) {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.framentContinar, HomeFragment()).commit()
-            } else if (item.itemId == R.id.search) {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.framentContinar, SearchFragment()).commit()
-            } else if (item.itemId == R.id.favorite) {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.framentContinar, FavoriteFragment()).commit()
-            } else if (item.itemId == R.id.podcast) {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.framentContinar, PodcastFragment()).commit()
-            } else if (item.itemId == R.id.settings) {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.framentContinar, SettingFragment()).commit()
-            }
-            true
-        })
+        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+        navView.setupWithNavController(navController)
     }
 }

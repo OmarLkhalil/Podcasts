@@ -1,4 +1,3 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     alias(libs.plugins.com.android.application) apply false
@@ -8,4 +7,4 @@ plugins {
 
 
 }
-true // Needed to make the Suppress annotation work for the plugins block
+true

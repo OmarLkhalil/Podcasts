@@ -2,27 +2,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/home"
+        android:id="@+id/homeFragment"
         android:title="@string/home"
         android:icon="@drawable/home" />
 
     <item
-        android:id="@+id/search"
+        android:id="@+id/searchFragment"
         android:title="@string/search"
         android:icon="@drawable/search" />
 
     <item
-        android:id="@+id/favorite"
+        android:id="@+id/favoriteFragment"
         android:title="@string/favorite"
         android:icon="@drawable/favorite" />
 
     <item
-        android:id="@+id/podcast"
+        android:id="@+id/podcastFragment"
         android:title="@string/podcast"
         android:icon="@drawable/podcasts" />
 
     <item
-        android:id="@+id/settings"
+        android:id="@+id/settingFragment"
         android:title="@string/settings"
         android:icon="@drawable/settings" />
 </menu>

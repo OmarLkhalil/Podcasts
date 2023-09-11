@@ -16,24 +16,57 @@ hilt = "2.47"
 hilt-navigation = "1.0.0"
 nav_version = "2.7.2"
 
+androidx-test = "1.5.2"
+androidx-test-espresso = "3.5.1"
+androidx-test-ext-truth = "1.5.0"
+androix-test-uiautomator = "2.2.0"
+timber = "5.0.1"
+androidx-lifecycle = "2.6.1"
+
 [libraries]
+#core
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
-junit = { group = "junit", name = "junit", version.ref = "junit" }
-androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+
+#coroutines
 kotlin-coroutines ={ group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines"}
+
+#retrofit
 google-gson = { group = "com.google.code.gson", name = "gson", version.ref = "ggson" }
 retrofit = {group = "com.squareup.retrofit2",name = "retrofit",version.ref = "retrofit"}
 retrofit-gson = {group = "com.squareup.retrofit2",name = "converter-gson",version.ref = "retrofit"}
+
+#hilt
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 hilt-navigation = { group = "androidx.hilt", name = "hilt-navigation", version.ref = "hilt-navigation" }
-nav_version = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "nav_version" }
-nav_version2 = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "nav_version" }
 
+#navigation
+nav-fragment = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "nav_version" }
+nav_ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "nav_version" }
+
+#lifecycle
+lifecycle-livedata = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidx-lifecycle" }
+lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx-lifecycle" }
+lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidx-lifecycle" }
+lifecycle-viewmodel-savedstate = { module = "androidx.lifecycle:lifecycle-viewmodel-savedstate", version.ref = "androidx-lifecycle" }
+
+
+#testing
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+androidx-test-core = { module = "androidx.test:core", version.ref = "androidx-test" }
+androidx-test-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "androidx-test-espresso" }
+androidx-test-ext-truth = { module = "androidx.test.ext:truth", version.ref = "androidx-test-ext-truth" }
+androidx-test-rules = { module = "androidx.test:rules", version.ref = "androidx-test" }
+androidx-test-runner = { module = "androidx.test:runner", version.ref = "androidx-test" }
+androidx-test-uiautomator = { module = "androidx.test.uiautomator:uiautomator", version.ref = "androix-test-uiautomator" }
+
+#timber
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 
 [plugins]
 com-android-application = { id = "com.android.application", version.ref = "agp" }

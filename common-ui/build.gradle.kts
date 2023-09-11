@@ -26,6 +26,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+    buildFeatures{
+        viewBinding = true
+    }
 
     kotlinOptions {
         jvmTarget = "17"
@@ -34,20 +37,18 @@ android {
 
 dependencies {
 
-    implementation(project(":ui:favorite"))
-    implementation(project(":ui:home"))
-    implementation(project(":ui:podcast"))
-    implementation(project(":ui:search"))
-    implementation(project(":ui:settings"))
 
     implementation(libs.core.ktx)
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation)
     implementation(libs.appcompat)
     implementation(libs.material)
-    implementation(libs.nav.version)
-    implementation(libs.nav.version2)
+    implementation(libs.nav.fragment)
+    implementation(libs.nav.ktx)
     implementation(libs.constraintlayout)
+
+    implementation(project(mapOf("path" to ":navigation")))
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)

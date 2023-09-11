@@ -23,3 +23,5 @@ include(":ui:search")
 include(":ui:settings")
 include(":common-ui")
 include(":ui:podcast")
+include(":navigation")
+ 

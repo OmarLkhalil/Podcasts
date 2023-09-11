@@ -7,20 +7,24 @@
     android:background="@color/white"
     tools:context=".bottomnav.MainActivity">
 
-    <FrameLayout
-        android:id="@+id/framentContinar"
+    <fragment
+        android:id="@+id/nav_host_fragment_activity_main"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        app:defaultNavHost="true"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/buttomNavigathion"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:navGraph="@navigation/navgraph" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/buttomNavigathion"
+        android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:labelVisibilityMode="labeled"
-        app:layout_constraintTop_toBottomOf="@id/framentContinar"
+        app:layout_constraintTop_toBottomOf="@id/nav_host_fragment_activity_main"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/podcast_menu"
         android:background="@color/white"
