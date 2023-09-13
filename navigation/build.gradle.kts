@@ -46,6 +46,7 @@ dependencies {
     implementation(libs.nav.fragment)
     implementation(libs.nav.ktx)
 
+
     implementation(project(mapOf("path" to ":ui:home")))
     implementation(project(mapOf("path" to ":ui:search")))
     implementation(project(mapOf("path" to ":ui:favorite")))

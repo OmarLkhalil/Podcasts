@@ -2,6 +2,8 @@
 plugins {
     alias(libs.plugins.com.android.library)
     alias(libs.plugins.org.kotlin)
+    alias(libs.plugins.hilt)
+    id("kotlin-kapt")
 }
 
 android {
@@ -41,6 +43,8 @@ dependencies {
     implementation(libs.core.ktx)
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation)
+    kapt(libs.hilt.android.compiler)
+    kapt(libs.hilt.compiler)
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.nav.fragment)

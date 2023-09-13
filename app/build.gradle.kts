@@ -4,7 +4,6 @@ plugins {
     alias(libs.plugins.org.kotlin)
     alias(libs.plugins.hilt)
     id("kotlin-kapt")
-
 }
 
 android {
@@ -19,6 +18,14 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    with(packagingOptions) {
+        resources {
+            excludes.add("META-INF/gradle/incremental.annotation.processors")
+            excludes.add("/META-INF/{AL2.0,LGPL2.1}")
+            excludes.add("META-INF/LICENSE.txt")
+        }
     }
 
     buildTypes {

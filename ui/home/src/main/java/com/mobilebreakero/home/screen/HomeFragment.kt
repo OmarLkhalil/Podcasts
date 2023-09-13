@@ -11,10 +11,12 @@ import androidx.lifecycle.lifecycleScope
 import com.mobilebreakero.home.adapter.PodcastAdapter
 import com.mobilebreakero.home.databinding.FragmentHomeBinding
 import com.mobilebreakero.home.viewmodel.HomeViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.HiltAndroidApp
 import dagger.hilt.android.internal.Contexts.getApplication
 import kotlinx.coroutines.launch
 
-
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private lateinit var podcastViewModel: HomeViewModel
@@ -24,8 +26,7 @@ class HomeFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         podcastViewModel = ViewModelProvider(
-            this,
-            ViewModelProvider.AndroidViewModelFactory()
+            this
         )[HomeViewModel::class.java]
     }
 
@@ -46,7 +47,6 @@ class HomeFragment : Fragment() {
 
         val adapter = PodcastAdapter(requireContext())
         podcastViewModel.fetchPodcasts()
-
         lifecycleScope.launch {
             podcastViewModel._podcasts.collect {
                 adapter.submitList(it?.podcasts)

@@ -12,16 +12,16 @@
         android:layout_height="match_parent"
         android:id="@+id/progress_circular"
         >
-
     </com.google.android.material.progressindicator.CircularProgressIndicator>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/podcast_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/podcast_item"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="20dp"
         />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

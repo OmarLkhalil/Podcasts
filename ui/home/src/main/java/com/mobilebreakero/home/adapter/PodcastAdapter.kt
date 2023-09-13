@@ -22,5 +22,4 @@ internal class PodcastAdapter(
         Glide.with(context).load(item.thumbnail).into(holder.binding.podcastImage)
         holder.binding.podcastTitle.text = item.title
     }
-
 }

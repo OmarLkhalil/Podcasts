@@ -15,7 +15,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-    private const val BASE_URL = "https://listen-api.listennotes.com/api/v2"
+    private const val BASE_URL = "https://listen-api.listennotes.com/api/v2/"
 
     private const val HEADER_KEY = "X-ListenAPI-Key"
     private const val HEADER_VALUE = "28aede4c183c4d58b08680d5eaead2c9"

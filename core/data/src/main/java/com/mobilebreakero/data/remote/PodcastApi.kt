@@ -7,10 +7,10 @@ import retrofit2.http.Query
 
 interface PodcastApi {
 
-    @GET("/genres")
+    @GET("genres")
     suspend fun getGenres(): Genres
 
-    @GET("/best_podcasts")
+    @GET("best_podcasts")
     suspend fun getPodcasts(): Podcasts
 
 }

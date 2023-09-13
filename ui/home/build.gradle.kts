@@ -66,6 +66,7 @@ dependencies {
     // dagger hilt
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation)
+    implementation(project(mapOf("path" to ":core:domain")))
     kapt(libs.hilt.android.compiler)
     kapt(libs.hilt.compiler)
 

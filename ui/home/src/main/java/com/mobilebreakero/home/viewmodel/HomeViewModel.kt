@@ -1,5 +1,6 @@
 package com.mobilebreakero.home.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mobilebreakero.domain.entity.Podcasts
@@ -12,6 +13,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
+    private val podcastsUseCase: PodcastsUseCase
 ) : ViewModel() {
 
     private val podcasts: MutableStateFlow<Podcasts?> = MutableStateFlow(null)
@@ -20,8 +22,11 @@ class HomeViewModel @Inject constructor(
     fun fetchPodcasts() {
         viewModelScope.launch {
             try {
+                val list = podcastsUseCase.execute();
+                podcasts.value = list;
             } catch (e: Exception) {
-
+                Log.e("HomeViewModelException", e.message.toString())
+                throw e;
             }
         }
     }
