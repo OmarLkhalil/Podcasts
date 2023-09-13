@@ -2,7 +2,9 @@ package com.mobilebreakero.podcasts.di
 
 import com.mobilebreakero.data.remote.PodcastApi
 import com.mobilebreakero.data.repoimpl.GenresRepImp
+import com.mobilebreakero.data.repoimpl.PodcastsRepoImpl
 import com.mobilebreakero.domain.repo.GenresRepo
+import com.mobilebreakero.domain.repo.PodcastsRepo
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,9 +14,17 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object RepoModule {
+
     @Provides
     @Singleton
-    fun provideRepo(apiService: PodcastApi): GenresRepo {
+    fun provideGenresRepo(apiService: PodcastApi): GenresRepo {
         return GenresRepImp(apiService)
     }
+
+    @Provides
+    @Singleton
+    fun providePodcastRepo(apiService: PodcastApi): PodcastsRepo {
+        return PodcastsRepoImpl(apiService)
+    }
+
 }

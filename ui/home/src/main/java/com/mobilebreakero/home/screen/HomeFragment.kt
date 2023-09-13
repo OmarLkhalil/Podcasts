@@ -1,19 +1,57 @@
 package com.mobilebreakero.home.screen
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.mobilebreakero.home.R
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
+import com.mobilebreakero.home.adapter.PodcastAdapter
+import com.mobilebreakero.home.databinding.FragmentHomeBinding
+import com.mobilebreakero.home.viewmodel.HomeViewModel
+import dagger.hilt.android.internal.Contexts.getApplication
+import kotlinx.coroutines.launch
+
 
 class HomeFragment : Fragment() {
+
+    private lateinit var podcastViewModel: HomeViewModel
+
+    private lateinit var binding: FragmentHomeBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        podcastViewModel = ViewModelProvider(
+            this,
+            ViewModelProvider.AndroidViewModelFactory()
+        )[HomeViewModel::class.java]
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+    ): View {
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupRecyclerView()
+    }
+
+    private fun setupRecyclerView() {
+
+        val adapter = PodcastAdapter(requireContext())
+        podcastViewModel.fetchPodcasts()
+
+        lifecycleScope.launch {
+            podcastViewModel._podcasts.collect {
+                adapter.submitList(it?.podcasts)
+                binding.podcastRecyclerView.adapter = adapter
+            }
+        }
     }
 }

@@ -16,25 +16,41 @@ import javax.inject.Singleton
 object NetworkModule {
 
     private const val BASE_URL = "https://listen-api.listennotes.com/api/v2"
+
+    private const val HEADER_KEY = "X-ListenAPI-Key"
+    private const val HEADER_VALUE = "28aede4c183c4d58b08680d5eaead2c9"
+
     @Provides
     @Singleton
-    fun provideHttp():OkHttpClient{
-        return OkHttpClient.Builder().connectTimeout(20,TimeUnit.SECONDS)
-            .readTimeout(20,TimeUnit.SECONDS).build()
+    fun provideHttp(): OkHttpClient {
+        val httpClient = OkHttpClient.Builder()
+            .connectTimeout(20, TimeUnit.SECONDS)
+            .readTimeout(20, TimeUnit.SECONDS)
+
+        httpClient.addInterceptor { chain ->
+            val original = chain.request()
+            val requestBuilder = original.newBuilder()
+                .header(HEADER_KEY, HEADER_VALUE)
+            val request = requestBuilder.build()
+            chain.proceed(request)
+        }
+
+        return httpClient.build()
     }
+
     @Provides
     @Singleton
-    fun provideRetrofit(okHttpClient: OkHttpClient):Retrofit{
+    fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
+
     @Provides
     @Singleton
     fun provideApiService(retrofit: Retrofit): PodcastApi {
         return retrofit.create(PodcastApi::class.java)
     }
-
 }

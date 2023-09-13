@@ -22,6 +22,9 @@ androidx-test-ext-truth = "1.5.0"
 androix-test-uiautomator = "2.2.0"
 timber = "5.0.1"
 androidx-lifecycle = "2.6.1"
+landscapist = "4.16.0"
+fragment = "1.6.1"
+hilt_lifecyle = "1.0.0-alpha03"
 
 [libraries]
 #core
@@ -31,17 +34,21 @@ material = { group = "com.google.android.material", name = "material", version.r
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 
 #coroutines
-kotlin-coroutines ={ group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines"}
+kotlin-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
 
 #retrofit
 google-gson = { group = "com.google.code.gson", name = "gson", version.ref = "ggson" }
-retrofit = {group = "com.squareup.retrofit2",name = "retrofit",version.ref = "retrofit"}
-retrofit-gson = {group = "com.squareup.retrofit2",name = "converter-gson",version.ref = "retrofit"}
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
 
 #hilt
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
-hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 hilt-navigation = { group = "androidx.hilt", name = "hilt-navigation", version.ref = "hilt-navigation" }
+hilt-android-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.ref = "hilt_lifecyle"}
+
+#fragment
+androidx-fragment = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragment" }
 
 #navigation
 nav-fragment = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "nav_version" }
@@ -64,6 +71,9 @@ androidx-test-ext-truth = { module = "androidx.test.ext:truth", version.ref = "a
 androidx-test-rules = { module = "androidx.test:rules", version.ref = "androidx-test" }
 androidx-test-runner = { module = "androidx.test:runner", version.ref = "androidx-test" }
 androidx-test-uiautomator = { module = "androidx.test.uiautomator:uiautomator", version.ref = "androix-test-uiautomator" }
+
+#Glide
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "landscapist" }
 
 #timber
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
