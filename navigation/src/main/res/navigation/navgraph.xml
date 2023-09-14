@@ -2,14 +2,17 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/navgraph"
-    app:startDestination="@id/favoriteFragment">
+    app:startDestination="@id/homeFragment">
+
 
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.mobilebreakero.home.screen.HomeFragment"
         android:label="HomeFragment"
         app:enterAnim="@anim/slide_in"
+        app:popEnterAnim="@anim/fade_in"
         app:exitAnim="@anim/fade_out"
+        app:popExitAnim="@anim/slide_out"
         />
 
     <fragment
@@ -17,7 +20,9 @@
         android:name="com.mobilebreakero.music.screen.FavoriteFragment"
         android:label="FavoriteFragment"
         app:enterAnim="@anim/slide_in"
+        app:popEnterAnim="@anim/fade_in"
         app:exitAnim="@anim/fade_out"
+        app:popExitAnim="@anim/slide_out"
         />
 
     <fragment
@@ -25,7 +30,9 @@
         android:name="com.example.podcast.PodcastFragment"
         android:label="PodcastFragment"
         app:enterAnim="@anim/slide_in"
+        app:popEnterAnim="@anim/fade_in"
         app:exitAnim="@anim/fade_out"
+        app:popExitAnim="@anim/slide_out"
         />
 
     <fragment
@@ -33,7 +40,9 @@
         android:name="com.mobilebreakero.search.screen.SearchFragment"
         android:label="SearchFragment"
         app:enterAnim="@anim/slide_in"
+        app:popEnterAnim="@anim/fade_in"
         app:exitAnim="@anim/fade_out"
+        app:popExitAnim="@anim/slide_out"
         />
 
     <fragment
@@ -41,7 +50,9 @@
         android:name="com.mobilebreakero.settings.screen.SettingFragment"
         android:label="SettingFragment"
         app:enterAnim="@anim/slide_in"
+        app:popEnterAnim="@anim/fade_in"
         app:exitAnim="@anim/fade_out"
+        app:popExitAnim="@anim/slide_out"
         />
 
 </navigation>

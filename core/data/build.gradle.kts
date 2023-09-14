@@ -2,6 +2,10 @@
 plugins {
     alias(libs.plugins.com.android.library)
     alias(libs.plugins.org.kotlin)
+    alias(libs.plugins.hilt)
+    id("kotlin-parcelize")
+    id("kotlin-kapt")
+
 }
 
 android {
@@ -41,4 +45,10 @@ dependencies {
     implementation(project(path = ":core:domain"))
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    implementation(libs.google.gson)
+
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+    implementation(libs.hilt.navigation)
+    kapt(libs.hilt.android.compiler)
 }

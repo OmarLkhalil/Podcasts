@@ -42,6 +42,7 @@ dependencies {
 
     // modules
     implementation (project(":core:data"))
+    implementation (project(":common"))
 
     //core kotlin
     implementation(libs.core.ktx)

@@ -1,4 +1,4 @@
-package com.mobilebreakero.home.adapter
+package com.mobilebreakero.home.bestpodcastsadapter
 
 import androidx.recyclerview.widget.DiffUtil
 import com.mobilebreakero.domain.entity.PodcastsItem

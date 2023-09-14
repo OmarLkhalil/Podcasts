@@ -1,4 +1,4 @@
-package com.mobilebreakero.home.adapter
+package com.mobilebreakero.common
 
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable

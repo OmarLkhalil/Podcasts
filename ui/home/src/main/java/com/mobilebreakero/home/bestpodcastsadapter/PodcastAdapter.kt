@@ -1,4 +1,4 @@
-package com.mobilebreakero.home.adapter
+package com.mobilebreakero.home.bestpodcastsadapter
 
 import android.content.Context
 import android.view.LayoutInflater
