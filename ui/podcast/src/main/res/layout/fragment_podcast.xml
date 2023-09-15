@@ -7,16 +7,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".PodcastFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Podcast Screen"
-        android:textSize="33sp"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toTopOf="parent"
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextColor="#050505"
+        app:tabBackground="@drawable/tab_background"
+        app:tabMode="scrollable"
+        app:tabGravity="center"
+        android:layout_marginTop="8dp"
         />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
