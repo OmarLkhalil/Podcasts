@@ -5,9 +5,11 @@ import com.mobilebreakero.data.remote.PodcastApi
 import com.mobilebreakero.data.repoimpl.CuratedPodcastsRepoImpl
 import com.mobilebreakero.data.repoimpl.GenresRepImp
 import com.mobilebreakero.data.repoimpl.PodcastsRepoImpl
+import com.mobilebreakero.data.repoimpl.SearchResultRepoImpl
 import com.mobilebreakero.domain.repo.CuratedPodcastsRepo
 import com.mobilebreakero.domain.repo.GenresRepo
 import com.mobilebreakero.domain.repo.PodcastsRepo
+import com.mobilebreakero.domain.repo.SearchResultRepo
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -34,6 +36,13 @@ object RepoModule {
     @Singleton
     fun provideCuratedPodcastRepo(apiService: PodcastApi, mapper: CuratedPodcastsMapper): CuratedPodcastsRepo {
         return CuratedPodcastsRepoImpl(apiService, mapper)
+    }
+
+
+    @Provides
+    @Singleton
+    fun provideSearchResultRepo(apiService: PodcastApi): SearchResultRepo {
+        return SearchResultRepoImpl(apiService)
     }
 
 }

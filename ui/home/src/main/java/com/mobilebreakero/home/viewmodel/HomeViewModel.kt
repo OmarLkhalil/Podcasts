@@ -14,5 +14,4 @@ class HomeViewModel @Inject constructor(
 
     suspend fun getPodcasts() = podcastsUseCase.invoke()
     suspend fun getCuratedPodcasts() = curatedPodcastsUseCase.invoke()
-
 }

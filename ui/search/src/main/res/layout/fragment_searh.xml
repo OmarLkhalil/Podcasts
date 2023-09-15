@@ -7,16 +7,51 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".screen.SearchFragment">
 
-    <TextView
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="12dp"
+            android:hint="@string/search_podcast"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/not_found"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/not_found"
+            android:textColor="@color/white"
+            android:visibility="invisible"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@id/editText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <ProgressBar
+        android:id="@+id/search_progressBar"
+        style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Search Screen"
-        android:textSize="33sp"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/editText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/editText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="12dp"
+            tools:listitem="@layout/searched_item"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

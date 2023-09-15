@@ -3,9 +3,11 @@ package com.mobilebreakero.podcasts.di
 import com.mobilebreakero.domain.repo.CuratedPodcastsRepo
 import com.mobilebreakero.domain.repo.GenresRepo
 import com.mobilebreakero.domain.repo.PodcastsRepo
+import com.mobilebreakero.domain.repo.SearchResultRepo
 import com.mobilebreakero.domain.usecase.CuratedPodcastsUseCase
 import com.mobilebreakero.domain.usecase.GenresUseCase
 import com.mobilebreakero.domain.usecase.PodcastsUseCase
+import com.mobilebreakero.domain.usecase.SearchResultUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -32,5 +34,11 @@ object UsecaseModule {
     @Singleton
     fun provideCuratedPodcastUseCase(curatedPodcastRepo: CuratedPodcastsRepo): CuratedPodcastsUseCase {
         return CuratedPodcastsUseCase(curatedPodcastRepo)
+    }
+
+    @Provides
+    @Singleton
+    fun provideSearchResultUseCase(searchResultRepo: SearchResultRepo): SearchResultUseCase {
+        return SearchResultUseCase(searchResultRepo)
     }
 }
