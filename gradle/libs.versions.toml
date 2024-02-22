@@ -13,7 +13,7 @@ kotlinparcelize = "1.8.0"
 ggson = "2.10.1"
 retrofit = "2.9.0"
 hilt = "2.47"
-hilt-navigation = "1.0.0"
+hilt-navigation = "1.2.0"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
