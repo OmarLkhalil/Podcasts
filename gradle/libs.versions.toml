@@ -12,7 +12,7 @@ coroutines = "1.7.3"
 kotlinparcelize = "1.8.0"
 ggson = "2.10.1"
 retrofit = "2.9.0"
-hilt = "2.47"
+hilt = "2.51"
 hilt-navigation = "1.0.0"
 
 [libraries]
