@@ -11,7 +11,7 @@ constraintlayout = "2.1.4"
 coroutines = "1.7.3"
 kotlinparcelize = "1.8.0"
 ggson = "2.10.1"
-retrofit = "2.9.0"
+retrofit = "2.10.0"
 hilt = "2.47"
 hilt-navigation = "1.0.0"
 
